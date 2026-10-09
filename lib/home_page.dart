@@ -64,37 +64,48 @@ class HomePage extends StatelessWidget {
         child: Icon(Icons.message),
       ),
 
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                backgroundColor: const Color.fromARGB(255, 227, 235, 235),
-                foregroundColor: Colors.cyan,
-                side: BorderSide(color: Colors.cyan, width: 3),
-                fixedSize: Size(100, 30),
-                elevation: 2,
-                shadowColor: Colors.cyan,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 227, 235, 235),
+                    foregroundColor: Colors.cyan,
+                    side: BorderSide(color: Colors.cyan, width: 3),
+                    fixedSize: Size(100, 30),
+                    elevation: 2,
+                    shadowColor: Colors.cyan,
+                  ),
+                  child: Text("Cyan"),
+                ),
               ),
-              child: Text("Cyan"),
-            ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 227, 235, 235),
+                  foregroundColor: Colors.green,
+                  side: BorderSide(color: Colors.greenAccent, width: 3),
+                  fixedSize: Size(100, 30),
+                ),
+                child: Text("Green"),
+              ),
+              OutlinedButton(onPressed: () {}, child: Text("Blue")),
+              IconButton(onPressed: () {}, icon: Icon(Icons.alarm)),
+            ],
           ),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255, 227, 235, 235),
-              foregroundColor: Colors.green,
-              side: BorderSide(color: Colors.greenAccent, width: 3),
-              fixedSize: Size(100, 30),
-            ),
-            child: Text("Green"),
+
+          Container(
+            height: 300,
+            width: 300,
+            decoration: BoxDecoration(color: Colors.lightGreen),
+            child: Text("Welcome 64E"),
           ),
-          OutlinedButton(onPressed: () {}, child: Text("Blue")),
-          IconButton(onPressed: () {}, icon: Icon(Icons.alarm)),
         ],
       ),
     );

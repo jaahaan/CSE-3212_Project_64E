@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_64e/card_page.dart';
+import 'package:project_64e/container_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -39,8 +41,14 @@ class HomePage extends StatelessWidget {
             ListTile(
               trailing: Icon(Icons.call),
               hoverColor: const Color.fromARGB(255, 157, 170, 82),
-              title: Text("Contact Me"),
-              onTap: () {},
+              title: Text("Container"),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ContainerPage()),
+                );
+              },
             ),
             Divider(),
             ListTile(
@@ -73,7 +81,12 @@ class HomePage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ContainerPage()),
+                    );
+                  },
                   style: TextButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 227, 235, 235),
                     foregroundColor: Colors.cyan,
@@ -82,20 +95,32 @@ class HomePage extends StatelessWidget {
                     elevation: 2,
                     shadowColor: Colors.cyan,
                   ),
-                  child: Text("Cyan"),
+                  child: Text("Container"),
                 ),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => CardPage()),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 227, 235, 235),
                   foregroundColor: Colors.green,
                   side: BorderSide(color: Colors.greenAccent, width: 3),
                   fixedSize: Size(100, 30),
                 ),
-                child: Text("Green"),
+                child: Text("Card"),
               ),
-              OutlinedButton(onPressed: () {}, child: Text("Blue")),
+              OutlinedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Blue Button Clicked")),
+                  );
+                },
+                child: Text("Blue"),
+              ),
               IconButton(onPressed: () {}, icon: Icon(Icons.alarm)),
             ],
           ),

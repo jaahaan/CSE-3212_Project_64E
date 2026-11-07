@@ -8,14 +8,14 @@ class CardPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("CardPage"),
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.lightGreen,
       ),
       body: Center(
         child: SizedBox(
           height: 300,
           width: 300,
           child: Card(
-            color: Colors.blueAccent,
+            color: Colors.lightGreen,
             margin: EdgeInsets.all(20),
             shadowColor: Colors.amber,
             elevation: 10,
